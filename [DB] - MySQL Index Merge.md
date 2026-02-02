@@ -117,7 +117,9 @@ WHERE name = 'Kim'
     2. idx_city 스캔 → 49935건의 PK
     3. 합집합 계산 → 72195개의 PK를 얻는다 
     4. 해당 결과를 조회하여 가져옴, 즉 72195건 조회.
-    
+
+    ![image.png](assets/union_example.png)
+
     근데 분명 name = Kim 인 결과 정보와 , city = Seoul 인 결과 정보를 바로 합치면, name = Kim AND city = Seoul 인 컬럼의 개수만큼 중복 컬럼이 발생할 것입니다.
     
     MySQL은 이 조건 검색 결과가 **PK로 정렬**되어있음을 알고있습니다.
@@ -127,7 +129,7 @@ WHERE name = 'Kim'
     그래서 세컨더리 인덱스는 구조적으로 세컨더리 인덱스 컬럼 + PK 컬럼처럼 동작합니다.
     
     그래서 name 조건과 city 조건으로 얻은 집합을 하나씩 가져와서 서로 비교하면서, PK 칼럼값이 중복된 레코드들을 정렬 없이 합치면서 걸러낼 수 있습니다.
-    
+        
 
 ### 2-1. Index_merge_sort_union
 
