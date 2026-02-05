@@ -1,4 +1,4 @@
-# SSAFY-CS-STUDY-15th 2026-01-27 김동연
+# SSAFY-CS-STUDY-15th 2026-01-27 김동연 
 
 # 우리의 SQL은 어디로 가는가
 
